@@ -228,19 +228,19 @@ margin_requirement = st.sidebar.slider(
 
 # LLM model selection
 # Filter LLM_ORDER to only include DeepSeek models
-deepseek_models = [(display, value, provider) for display, value, provider in LLM_ORDER if provider == ModelProvider.DEEPSEEK.value]
+# deepseek_models = [(display, value, provider) for display, value, provider in LLM_ORDER if provider == ModelProvider.DEEPSEEK.value]
 
-# Check if there are any DeepSeek models available
-if not deepseek_models:
-    st.error("No DeepSeek models are available. Please check your configuration.")
-    st.stop()
+# # Check if there are any DeepSeek models available
+# if not deepseek_models:
+#     st.error("No DeepSeek models are available. Please check your configuration.")
+#     st.stop()
 
-model_options = [display for display, value, _ in deepseek_models]
-model_values = [value for display, value, _ in deepseek_models]
-model_display_to_value = {display: value for display, value, _ in deepseek_models}
+model_options = [display for display, value, _ in LLM_ORDER]
+model_values = [value for display, value, _ in LLM_ORDER]
+model_display_to_value = {display: value for display, value, _ in LLM_ORDER}
 
 # Add a note about DeepSeek models
-st.sidebar.info("Only DeepSeek models are available for selection.")
+# st.sidebar.info("Only DeepSeek models are available for selection.")
 
 selected_model_display = st.sidebar.selectbox(
     "LLM Model",
