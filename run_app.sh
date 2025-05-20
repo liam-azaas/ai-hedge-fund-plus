@@ -6,7 +6,7 @@ if command -v poetry &> /dev/null; then
     # Make sure dependencies are installed
     poetry install
     # Run the app
-    poetry run streamlit run app.py
+    poetry run streamlit run app.py --browser.gatherUsageStats false
 else
     # Fall back to regular Python if Poetry is not installed
     echo "Poetry not found, using regular Python..."
